@@ -1,0 +1,12 @@
+<div class="container">
+  <mat-card>
+    <mat-card-title>User Info</mat-card-title>
+    <mat-card-content *ngIf="user">
+      <p><strong>{{ user.email }}</strong></p>
+      <p>{{ user.firstName }}</p>
+      <p>{{ user.lastName }}</p>
+      <p>{{ user.role }}</p>
+      <p *ngIf="user.onCreated">{{ user.onCreated * 1000 | date }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

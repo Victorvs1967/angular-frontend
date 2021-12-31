@@ -7,7 +7,7 @@ export class User {
   lastName?: string;
   fullName?: string;
   role?: string;
-  onCreate?: string;
-  onUpdate?: string;
+  onCreated?: number;
+  onUpdated?: number;
   
 }

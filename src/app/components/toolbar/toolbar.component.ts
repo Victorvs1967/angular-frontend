@@ -36,20 +36,15 @@ export class ToolbarComponent implements OnInit {
   logout() {
     this.tokenStorageService.logout();
     this.isLogin = this.tokenStorageService.isLogin();
+    this.router.navigate(['home']);
   }
 
   getUsers() {
-    this.http.getUsers().subscribe(users => {
-      this.users = [ ...users ];
-      console.log(this.users);
-    });
+    this.router.navigate(['users']);
   }
 
   getUser() {
-    const email = this.tokenStorageService.getEmail();
-    if (email) {
-      this.http.getUser(email).subscribe(data => console.log(data));
-    }
+    this.router.navigate(['user']);
   }
 
 }
