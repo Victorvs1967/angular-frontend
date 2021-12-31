@@ -3,7 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  AUTH_TOKEN_KEY: 'authToken',
+  AUTH_EMAIL_KEY: 'email',
+  baseUrl: 'http://localhost:8080',
+  signup: '/auth/signup',
+  login: '/auth/login',
+  users: '/users',
+  user: '/user'
 };
 
 /*

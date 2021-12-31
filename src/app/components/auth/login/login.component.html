@@ -1,0 +1,18 @@
+<div class="container">
+  <h1 class="header">Login</h1>
+  <form class="login-form">
+    <span class="message" *ngIf="message">{{ message }}</span>
+    <mat-form-field appearance="outline" class="email">
+      <input matInput type="email" placeholder="Email" [formControl]="email" required />
+      <mat-error class="email-validator-message" *ngIf="email.invalid">An email required.</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="password">
+      <input matInput type="password" placeholder="password" [formControl]="password" required />
+      <mat-error class="password-validator-message" *ngIf="password.invalid">A password required.</mat-error>
+    </mat-form-field>
+    <div class="btn-wrapper">
+      <button mat-raised-button class="login" color="primary" [disabled]="email.invalid || password.invalid" (click)="login($event)">Login</button>
+      <button mat-raised-button class="signup" (click)="signup()">Signup</button>
+    </div>
+  </form>
+</div>

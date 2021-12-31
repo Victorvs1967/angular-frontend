@@ -1,0 +1,33 @@
+.container .signup-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+} 
+.header {
+  margin-top: 60px;
+  text-align: center;
+}
+.signup-form {
+  border: 1px solid;
+  padding: 6vh;
+  border-radius: 8px;
+}
+mat-form-field, .signup-form {
+  width: 45vw;
+}
+.message {
+  color: #f20;
+}
+.btn-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+button.login, button.signup {
+  width: 100%;
+  border-radius: 2rem;
+  padding: 0.25rem 0;
+  margin: 6px 4px;
+}

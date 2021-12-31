@@ -1,0 +1,38 @@
+mat-toolbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  box-shadow: -1px -1px 20px 10px rgba(0, 0, 0, .45);
+}
+.spacer {
+  flex: 1 1;
+}
+
+.menu-list {
+  display: flex;
+}
+
+.menu-list-row {
+  display: none;
+}
+
+.menu-list-row.active {
+  display: flex;
+  justify-content: center;
+}
+
+.menu-icon {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  .menu-list {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
