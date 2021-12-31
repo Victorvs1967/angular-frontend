@@ -1,7 +1,10 @@
 <div class="container">
   <table mat-table [dataSource]="users" class="mat-elevation-z2" aria-hidden="true">
     <ng-container [matColumnDef]="col" *ngFor="let col of displayedColumns">
-      <th mat-header-cell *matHeaderCellDef scope="col">{{ col }}</th>
+      <th mat-header-cell *matHeaderCellDef scope="col">
+        <span *ngIf="col !== 'fullName'">{{ col | uppercase }}</span>
+        <span *ngIf="col == 'fullName'">USER</span>
+      </th>
       <td mat-cell *matCellDef="let element">{{ element[col] }}</td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
