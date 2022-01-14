@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { map } from 'rxjs/operators';
 import { User } from 'src/app/models/user';
-import { AuthService } from 'src/app/services/auth.service';
-import { HttpService } from 'src/app/services/http.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
@@ -14,13 +11,15 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
 export class ToolbarComponent implements OnInit {
 
   isLogin: boolean = false;
+  isAdmin: boolean = false;
   users: User[] = [];
   user?: User;
 
-  constructor(private http: HttpService, private tokenStorageService: TokenStorageService, private router: Router) { }
+  constructor(private tokenStorageService: TokenStorageService, private router: Router) { }
 
   ngOnInit(): void {
     this.isLogin = this.tokenStorageService.isLogin();
+    this.isAdmin = this.tokenStorageService.getEmail() === 'admin@mail.me';
   }
 
   viewMenu(): void {

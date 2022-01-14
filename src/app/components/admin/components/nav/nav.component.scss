@@ -1,0 +1,15 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  margin-top: 60px;
+  width: 200px;
+  background: inherit;
+}
+
+app-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}

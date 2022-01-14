@@ -23,10 +23,11 @@ export class LoginComponent implements OnInit {
 
   login(event: Event) {
     event.preventDefault();
-    this.auth.login(this.email.value, this.password.value).subscribe(() => this.reload());
+    const email = this.email.value;
+    this.auth.login(email, this.password.value).subscribe(() => this.reload());
     this.email.reset();
     this.password.reset();
-    this.router.navigate(['home']);
+    (email === 'admin@mail.me') ? this.router.navigate(['admin']) : this.router.navigate(['home']);
   }
 
   signup() {

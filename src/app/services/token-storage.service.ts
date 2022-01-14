@@ -15,8 +15,9 @@ export class TokenStorageService {
     window.sessionStorage.setItem(AUTH_TOKEN_KEY, token);
   }
 
-  getToken(): string | null {
-    return sessionStorage.getItem(AUTH_TOKEN_KEY);
+  getToken(): string | undefined {
+    const token = sessionStorage.getItem(AUTH_TOKEN_KEY);
+    return token !== null ? token : undefined;
   }
 
   setEmail(email: string) {
@@ -24,8 +25,9 @@ export class TokenStorageService {
     window.sessionStorage.setItem(AUTH_EMAIL_KEY, email);
   }
 
-  getEmail(): string | null {
-    return sessionStorage.getItem(AUTH_EMAIL_KEY);
+  getEmail(): string | undefined {
+    const email = sessionStorage.getItem(AUTH_EMAIL_KEY);    
+    return email !== null ? email : undefined;
   }
 
   logout() {
@@ -33,6 +35,6 @@ export class TokenStorageService {
   }
 
   isLogin(): boolean {
-    return this.getToken() !== null;
+    return this.getToken() !== undefined;
   }
 }

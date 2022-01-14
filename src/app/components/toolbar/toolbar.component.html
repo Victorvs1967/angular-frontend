@@ -3,17 +3,22 @@
     <span>VVS app</span>
     <span class="spacer"></span>
     <div class="menu-list active">
-      <button mat-button routerLink="home">Home</button>
-      <button mat-button (click)="getUsers()">Users</button>
-      <button mat-button (click)="getUser()">User</button>
+      <span *ngIf="!isAdmin">
+        <button mat-button routerLink="home">Home</button>
+        <button mat-button (click)="getUsers()">Users</button>
+        <button mat-button (click)="getUser()">User</button>
+      </span>
       <button mat-icon-button *ngIf="!isLogin" (click)="login()"><mat-icon>login</mat-icon></button>
       <button mat-icon-button *ngIf="isLogin" (click)="logout()"><mat-icon>logout</mat-icon></button>
     </div>
     <button mat-icon-button class="menu-icon" (click)="viewMenu()"><mat-icon>menu</mat-icon></button>
     </mat-toolbar-row>
     <mat-toolbar-row class="menu-list-row">
-      <button mat-button>Home</button>
-      <button mat-button>Users</button>
+      <span *ngIf="!isAdmin">
+        <button mat-button routerLink="home">Home</button>
+        <button mat-button (click)="getUsers()">Users</button>
+        <button mat-button (click)="getUser()">User</button>
+      </span>
       <button mat-icon-button *ngIf="!isLogin" (click)="login()"><mat-icon>login</mat-icon></button>
       <button mat-icon-button *ngIf="isLogin" (click)="logout()"><mat-icon>logout</mat-icon></button>
     </mat-toolbar-row>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user';
 import { HttpService } from 'src/app/services/http.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
@@ -10,15 +10,14 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
 })
 export class UserComponent implements OnInit {
 
+  email?: string;
   user?: User;
 
   constructor(private http: HttpService, private tokenStorageService: TokenStorageService) { }
 
   ngOnInit(): void {
-    const email = this.tokenStorageService.getEmail();
-    if (email) {
-      this.http.getUser(email).subscribe(user => this.user = user);
-    }
+    this.email = this.tokenStorageService.getEmail();
+    if (this.email) this.http.getUser(this.email).subscribe(user => this.user = user);
   }
 
 }
