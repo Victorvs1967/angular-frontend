@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashComponent } from './components/admin/components/dash/dash.component';
 import { NavComponent } from './components/admin/components/nav/nav.component';
+import { ProjectsComponent } from './components/admin/components/projects/projects.component';
 import { UsersTableComponent } from './components/admin/components/users-table/users-table.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
@@ -15,10 +16,14 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'users', component: UsersComponent },
   { path: 'user', component: UserComponent },
-  { path: 'admin/dashboard', component: DashComponent },
-  { path: 'admin/users', component: UsersComponent },
-  { path: 'admin/users-table', component: UsersTableComponent },
-  { path: 'admin', redirectTo: 'admin/dashboard', pathMatch: 'full'},
+  { path: 'admin', component: NavComponent,
+    children: [
+      { path: 'dashboard', component: DashComponent },
+      { path: 'users-table', component: UsersTableComponent },
+      { path: 'projects', component: ProjectsComponent },
+      { path: 'user', component: UserComponent },
+    ] 
+  },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 

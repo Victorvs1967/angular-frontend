@@ -14,13 +14,13 @@ export class DashComponent {
       if (matches) {
         return {
           columns: 1,
-          table: { cols: 1, rows: 4 }
+          table: { cols: 1, rows: 1 }
         };
       }
 
       return {
         columns: 4,
-        table: { cols: 4, rows: 4 }
+        table: { cols: 4, rows: 1 }
       };
     })
   );

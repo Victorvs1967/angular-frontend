@@ -19,6 +19,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { DashComponent } from './components/admin/components/dash/dash.component';
 import { CardComponent } from './components/admin/components/card/card.component';
 import { UsersTableComponent } from './components/admin/components/users-table/users-table.component';
+import { ProjectsComponent } from './components/admin/components/projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { UsersTableComponent } from './components/admin/components/users-table/u
     NavComponent,
     DashComponent,
     UsersTableComponent,
-    CardComponent
+    CardComponent,
+    ProjectsComponent,
   ],
   imports: [
     BrowserModule,

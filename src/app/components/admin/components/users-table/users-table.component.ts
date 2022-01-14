@@ -26,7 +26,6 @@ export class UsersTableComponent implements OnInit {
     this.dataSource = new UsersTableDataSource(this.http);
   }
   ngOnInit(): void {
-    console.log(this.table);
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     if (this.table) this.table.dataSource = this.dataSource;
@@ -40,7 +39,7 @@ export class UsersTableComponent implements OnInit {
 
   onClick(event: Event) {
     console.log(event.target);
-    this.router.navigate(['user']);
+    this.router.navigate(['admin/user']);
   }
 
   reload() {

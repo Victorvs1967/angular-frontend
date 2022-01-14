@@ -1,7 +1,7 @@
 <div *ngIf="!isAdmin">
   <app-toolbar></app-toolbar>
-  <router-outlet></router-outlet>
+  <ng-content></ng-content>
 </div>
 <div *ngIf="isAdmin">
-  <app-nav></app-nav>
+  <router-outlet></router-outlet>
 </div>
