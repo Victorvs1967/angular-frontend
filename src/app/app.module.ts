@@ -20,6 +20,7 @@ import { DashComponent } from './components/admin/components/dash/dash.component
 import { CardComponent } from './components/admin/components/card/card.component';
 import { UsersTableComponent } from './components/admin/components/users-table/users-table.component';
 import { ProjectsComponent } from './components/admin/components/projects/projects.component';
+import { EditUserComponent } from './components/admin/components/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { ProjectsComponent } from './components/admin/components/projects/projec
     UsersTableComponent,
     CardComponent,
     ProjectsComponent,
+    EditUserComponent,
   ],
   imports: [
     BrowserModule,

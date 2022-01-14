@@ -6,7 +6,6 @@
       <span *ngIf="!isAdmin">
         <button mat-button routerLink="home">Home</button>
         <button mat-button (click)="getUsers()">Users</button>
-        <button mat-button (click)="getUser()">User</button>
       </span>
       <button mat-icon-button *ngIf="!isLogin" (click)="login()"><mat-icon>login</mat-icon></button>
       <button mat-icon-button *ngIf="isLogin" (click)="logout()"><mat-icon>logout</mat-icon></button>
@@ -17,7 +16,6 @@
       <span *ngIf="!isAdmin">
         <button mat-button routerLink="home">Home</button>
         <button mat-button (click)="getUsers()">Users</button>
-        <button mat-button (click)="getUser()">User</button>
       </span>
       <button mat-icon-button *ngIf="!isLogin" (click)="login()"><mat-icon>login</mat-icon></button>
       <button mat-icon-button *ngIf="isLogin" (click)="logout()"><mat-icon>logout</mat-icon></button>
