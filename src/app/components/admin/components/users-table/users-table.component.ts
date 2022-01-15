@@ -39,7 +39,7 @@ export class UsersTableComponent implements OnInit {
 
   onClick(event: Event) {
     console.log(event.target);
-    this.router.navigate(['admin/user']);
+    this.router.navigate(['admin/edit-user']);
   }
 
   reload() {

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashComponent } from './components/admin/components/dash/dash.component';
+import { EditUserComponent } from './components/admin/components/edit-user/edit-user.component';
 import { NavComponent } from './components/admin/components/nav/nav.component';
 import { ProjectsComponent } from './components/admin/components/projects/projects.component';
 import { UsersTableComponent } from './components/admin/components/users-table/users-table.component';
@@ -21,7 +22,7 @@ const routes: Routes = [
       { path: 'dashboard', component: DashComponent },
       { path: 'users-table', component: UsersTableComponent },
       { path: 'projects', component: ProjectsComponent },
-      { path: 'user', component: UserComponent },
+      { path: 'edit-user', component: EditUserComponent },
     ] 
   },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
