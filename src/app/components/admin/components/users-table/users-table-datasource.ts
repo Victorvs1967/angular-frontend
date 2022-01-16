@@ -18,7 +18,7 @@ export class UsersTableDataSource extends DataSource<User> {
 
   constructor(private http: HttpService) {
     super();
-    this.http.getUsers().subscribe(users => (this.data = [...users]));
+    this.http.getUsers().subscribe(users => (this.data = [ ...users ]));
   }
 
   /**
@@ -33,7 +33,7 @@ export class UsersTableDataSource extends DataSource<User> {
       return this.http.getUsers().pipe(users => {
         return merge(users, this.paginator!.page, this.sort!.sortChange)
           .pipe(map(() => {
-            return this.getPagedData(this.getSortedData([...this.data]));
+            return this.getPagedData(this.getSortedData([ ...this.data ]));
           }))
         }
       );

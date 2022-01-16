@@ -2,17 +2,17 @@
   <h1 class="header">Edit User</h1>
   <form class="signup-form" [formGroup]="form" (ngSubmit)="onSubmit()">
     <mat-form-field appearance="outline" class="email">
-      <input matInput type="email" placeholder="Email" formControlName="email" required />
-      <!-- <mat-error class="email-validator-message" *ngIf="email.invalid && !isSignup">An email requiered.</mat-error> -->
+      <mat-label>{{ email }}</mat-label>
+      <input matInput type="text" disabled="true" />
     </mat-form-field>
     <mat-form-field appearance="outline" class="email">
-      <input matInput type="text" placeholder="First name" formControlName="firstName" required />
+      <input matInput type="text" placeholder="First name" formControlName="firstName" />
     </mat-form-field>
     <mat-form-field appearance="outline" class="email">
-      <input matInput type="text" placeholder="Last name" formControlName="lastName" required />
+      <input matInput type="text" placeholder="Last name" formControlName="lastName" />
     </mat-form-field>
     <mat-form-field appearance="outline" class="role">
-      <input matInput type="text" placeholder="Role" formControlName="role" required />
+      <input matInput type="text" placeholder="Role" formControlName="role" />
     </mat-form-field>
     <div class="btn-wrapper">
       <button mat-raised-button class="signup" color="primary" type="submit">Save</button>

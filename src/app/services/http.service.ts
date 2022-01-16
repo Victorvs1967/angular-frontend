@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -26,7 +26,7 @@ export class HttpService {
     return this.http.put<User>(baseUrl + user, data);
   }
 
-  deleteUser(email: string): Observable<any> {
+  deleteUser(email: string): Observable<User> {
     const { baseUrl, user } = environment;
     return this.http.delete<User>(baseUrl + user + `/${email}`);
   }

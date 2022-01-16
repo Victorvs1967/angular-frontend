@@ -20,7 +20,7 @@ export class UsersTableComponent implements OnInit {
   dataSource: UsersTableDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['email', 'fullName', 'role', 'onCreated'];
+  displayedColumns = ['email', 'fullName', 'role', 'onCreated', 'action'];
 
   constructor(private http: HttpService, private router: Router) {
     this.dataSource = new UsersTableDataSource(this.http);
@@ -37,9 +37,12 @@ export class UsersTableComponent implements OnInit {
     this.table!.dataSource = this.dataSource;
   }
 
-  onClick(el: any) {
-    console.log(el.email);
+  onEdit(el: any) {
     this.router.navigate([`admin/edit-user/${el.email}`]);
+  }
+
+  onDelete(email: string) {
+    this.http.deleteUser(email).subscribe(() => this.router.navigate(['admin/dashboard']));
   }
 
   reload() {
