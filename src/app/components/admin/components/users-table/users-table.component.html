@@ -1,7 +1,7 @@
 <div class="container">
   <app-card title="Users">
     <div class="mat-elevation-z8">
-      <table mat-table class="full-width-table" matSort aria-label="Elements" (click)="onClick($event)">
+      <table mat-table class="full-width-table" matSort aria-label="Elements">
         <!-- Name Column -->
         <ng-container matColumnDef="email">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
@@ -27,7 +27,7 @@
         </ng-container>
     
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onClick(row)"></tr>
       </table>
     
       <mat-paginator #paginator

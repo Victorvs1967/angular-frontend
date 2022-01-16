@@ -22,7 +22,7 @@ const routes: Routes = [
       { path: 'dashboard', component: DashComponent },
       { path: 'users-table', component: UsersTableComponent },
       { path: 'projects', component: ProjectsComponent },
-      { path: 'edit-user', component: EditUserComponent },
+      { path: 'edit-user/:email', component: EditUserComponent },
     ] 
   },
   { path: '', redirectTo: 'home', pathMatch: 'full' },

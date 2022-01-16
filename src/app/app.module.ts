@@ -9,7 +9,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UsersComponent } from './components/users/users.component';
 import { UserComponent } from './components/user/user.component';
@@ -21,6 +21,7 @@ import { CardComponent } from './components/admin/components/card/card.component
 import { UsersTableComponent } from './components/admin/components/users-table/users-table.component';
 import { ProjectsComponent } from './components/admin/components/projects/projects.component';
 import { EditUserComponent } from './components/admin/components/edit-user/edit-user.component';
+import { FrontInterceptor } from './interceptor/front.interceptor';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,9 @@ import { EditUserComponent } from './components/admin/components/edit-user/edit-
     ReactiveFormsModule,
     LayoutModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: FrontInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

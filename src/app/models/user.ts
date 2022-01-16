@@ -5,9 +5,8 @@ export class User {
   password?: string;
   firstName?: string;
   lastName?: string;
-  fullName?: string;
   role?: string;
+  fullName?: string;
   onCreated?: number;
   onUpdated?: number;
-  
 }

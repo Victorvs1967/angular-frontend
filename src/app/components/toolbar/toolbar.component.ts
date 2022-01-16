@@ -35,7 +35,7 @@ export class ToolbarComponent implements OnInit {
   logout() {
     this.tokenStorageService.logout();
     this.isLogin = this.tokenStorageService.isLogin();
-    this.router.navigate(['home']);
+    this.router.navigate(['home']).then(() => window.location.reload());
   }
 
   getUsers() {

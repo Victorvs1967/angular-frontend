@@ -37,9 +37,9 @@ export class UsersTableComponent implements OnInit {
     this.table!.dataSource = this.dataSource;
   }
 
-  onClick(event: Event) {
-    console.log(event.target);
-    this.router.navigate(['admin/edit-user']);
+  onClick(el: any) {
+    console.log(el.email);
+    this.router.navigate([`admin/edit-user/${el.email}`]);
   }
 
   reload() {
